@@ -1,0 +1,47 @@
+[
+    {
+        "model": "users.Role",
+        "pk": 1,
+        "fields": {
+            "name": "Administrador",
+            "description": "Administrador del sistema, tiene permiso completo del sistema",
+            "isSuperAdmin": "True",
+            "status_delete": "False",
+            "host": "*"
+        }
+    },
+    {
+        "model": "users.Role",
+        "pk": 2,
+        "fields": {
+            "name": "Abogado",
+            "description": "Tiene permisos para ver expedientes y areas asignados",
+            "isSuperAdmin": "False",
+            "status_delete": "False",
+            "host": "*"
+
+        }
+    },
+    {
+        "model": "users.Role",
+        "pk": 3,
+        "fields": {
+            "name": "Supervisor",
+            "description": "Tiene permisos para revisar expedientes y áreas asignadas",
+            "isSuperAdmin": "False",
+            "status_delete": "False",
+            "host": "*"
+        }
+    },
+    {
+        "model": "users.Role",
+        "pk": 4,
+        "fields": {
+            "name": "Auxiliar",
+            "description": "Puede cargar documentos y crear expedientes",
+            "isSuperAdmin": "False",
+            "status_delete": "False",
+            "host": "*"
+    }
+}
+]

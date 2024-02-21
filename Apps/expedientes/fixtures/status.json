@@ -1,0 +1,26 @@
+[
+    {
+        "model": "expedientes.Status",
+        "pk": 1,
+        "fields": {
+            "status": "En proceso",
+            "descripcion_status": "Se debe establecer un status"
+        }
+    },
+    {
+        "model": "expedientes.Status",
+        "pk": 2,
+        "fields": {
+            "status": "Abierto",
+            "descripcion_status": "Se debe establecer un status"
+        }
+    },
+    {
+        "model": "expedientes.Status",
+        "pk": 3,
+        "fields": {
+            "status": "Cerrado",
+            "descripcion_status": "Se debe establecer un status"
+        }
+    }
+]

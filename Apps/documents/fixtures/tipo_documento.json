@@ -1,0 +1,472 @@
+[
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 1,
+        "fields": {
+            
+            "name": "Sindicatura de Procuración"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 2,
+        "fields": {
+            "name": "Circular"
+        
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 2,
+        "fields": {
+            "name": "Solicitud de Información"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 3,
+        "fields": {
+            "name": "Solicitud de Información Pública"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 4,
+        "fields": {
+            
+            "name": "Solicitud de Órgano Interno de Control"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 5,
+        "fields": {
+            
+            "name": "Daños a Terceros"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 6,
+        "fields": {
+            
+            "name": "Solicitudes de Pensión de Viudez y/o Orfandad"
+
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 7,
+        "fields": {
+            
+            "name": "Solicitud de Pago de Retroactivo de Pensión de Viudez"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 8,
+        "fields": {
+            
+            "name": "Propuesta de Convenio"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 9,
+        "fields": {
+            "name": "Desbloqueo de Clave Catastral"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 10,
+        "fields": {
+            "name": "Admisión de Amparo"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 11,
+        "fields": {
+            "name": "Requerimiento"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 12,
+        "fields": {
+            
+            "name": "Recurso de Revisión"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 13,
+        "fields": {
+            
+            "name": "Recurso de Queja"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 14,
+        "fields": {
+            
+            "name": "Conslusión"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 15,
+        "fields": {
+            
+            "name": "Diferemiento de Audiencia"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 16,
+        "fields": {
+            
+            "name": "Prorroga"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 17,
+        "fields": {
+            
+            "name": "Ejecutoria"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 18,
+        "fields": {
+            
+            "name": "Recurso de Inconformidad"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 19,
+        "fields": {
+            
+            "name": "Suspensión Definitiva"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 20,
+        "fields": {
+            
+            "name": "Pensión Alimenticia"
+
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 21,
+        "fields": {
+            
+            "name": "Solicitud de Indemnización de Afectación a Predio"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 22,
+        "fields": {
+            
+            "name": "Derecho de Preferencia"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 23,
+        "fields": {
+            
+            "name": "Admisión a Demanda Civil"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 24,
+        "fields": {
+            
+            "name": "Sentencia"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 25,
+        "fields": {
+        
+            "name": "Solicitud de Publicación de Edictos"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 26,
+        "fields": {
+            
+            "name": "Solicitud de Domicilio"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 27,
+        "fields": {
+            
+            "name": "Solicitud de Informe de Salario"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 28,
+        "fields": {
+            
+            "name": "Amparo"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 29,
+        "fields": {
+            
+            "name": "Solicitud de Cancelación de Gravamen en Registro Público de la Propiedad"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 30,
+        "fields": {
+            
+            "name": "Solicitud de Dictamen de Jubilación"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 31,
+        "fields": {
+            
+            "name": "Admisión de Amparo"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 32,
+        "fields": {
+            
+            "name": "Propuesta de Convenio"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 33,
+        "fields": {
+            
+            "name": "Dictamen de Baja de Trabajador"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 34,
+        "fields": {
+            
+            "name": "Solicitud de Finiquito"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 35,
+        "fields": {
+            
+            "name": "Solicitud por Bono de Antiguedad"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 36,
+        "fields": {
+            
+            "name": "Solicitud de Asesoría"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 37,
+        "fields": {
+            
+            "name": "Solicitud de Reconocimiento de Antiguedad"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 38,
+        "fields": {
+            
+            "name": "Solicitud de Recisión Laboral"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 39,
+        "fields": {
+            
+            "name": "Validación de Firma de Seguro de Vida"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 40,
+        "fields": {
+            
+            "name": "Solicitud de Liberación de Vehículo"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 41,
+        "fields": {
+            
+            "name": "Admisión de Demanda"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 42,
+        "fields": {
+            
+            "name": "Acuerdo"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 43,
+        "fields": {
+            
+            "name": "Suspensión"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 44,
+        "fields": {
+            
+            "name": "Admisión de Recurso de Revisión"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 45,
+        "fields": {
+            
+            "name": "Apertura de Incidente"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 46,
+        "fields": {
+            
+            "name": "Resolución de Incidente"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 47,
+        "fields": {
+            
+            "name": "Resolución de Recurso"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 48,
+        "fields": {
+            
+            "name": "Sentencia"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 49,
+        "fields": {
+            
+            "name": "Acuerdo de Conclusión y Archivo Definitivo"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 50,
+        "fields": {
+            
+            "name": "Requerimiento de Cumplimiento de Sentencia"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 51,
+        "fields": {
+            
+            "name": "Incidente de Destitución"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 52,
+        "fields": {
+            
+            "name": "Destitución"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 53,
+        "fields": {
+            
+            "name": "Requerimiento y Multa"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 54,
+        "fields": {
+            
+            "name": "Contrato de Prestación de Servicios"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 55,
+        "fields": {
+            
+            "name": "Solicitud de Pago de lo Indebido"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 56,
+        "fields": {
+            
+            "name": "Cedula de Liquidación IMSS"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 57,
+        "fields": {
+            
+            "name": "Cedula de Liquidación INFONAVIT"
+        }
+    },
+    {
+        "model": "documents.Tipo_Documento",
+        "pk": 58,
+        "fields": {
+            
+            "name": "Multa SATES"
+        }
+    }
+    
+]
