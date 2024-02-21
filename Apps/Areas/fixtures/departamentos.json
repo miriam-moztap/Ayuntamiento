@@ -1,0 +1,87 @@
+[
+    {
+        "model": "Areas.departamento",
+        "pk": 1,
+        "fields": {
+            "nombre": "Sindicatura de Procuración"
+        }
+    },
+    {
+        "model": "Areas.departamento",
+        "pk": 2,
+        "fields": {
+            "nombre": "Dirección de la Defensa Jurídica"
+        }
+    },
+    {
+        "model": "Areas.departamento",
+        "pk": 3,
+        "fields": {
+            "nombre": "Dirección de Contraloría Social"
+        }
+    },
+    {
+        "model": "Areas.subdepartamento",
+        "pk": 1,
+        "fields": {
+            "nombre": "Dirección Defensa Jurídica",
+            "departamento": 2
+        }
+    },
+    {
+        "model": "Areas.subdepartamento",
+        "pk": 2,
+        "fields": {
+            "nombre": "Departamento Amparos",
+            "departamento": 2
+        }
+    },
+    {
+        "model": "Areas.subdepartamento",
+        "pk": 3,
+        "fields": {
+            "nombre": "Departamento Contencioso Administrativo",
+            "departamento": 2
+        }
+    },
+    {
+        "model": "Areas.subdepartamento",
+        "pk": 4,
+        "fields": {
+            "nombre": "Fiscal",
+            "departamento": 2
+        }
+    },
+    {
+        "model": "Areas.subdepartamento",
+        "pk": 5,
+        "fields": {
+            "nombre": "Laboral",
+            "departamento": 2
+        }
+    },
+    {
+        "model": "Areas.subdepartamento",
+        "pk": 6,
+        "fields": {
+            "nombre": "Penal",
+            "departamento": 2
+        }
+    },
+    {
+        "model": "Areas.subdepartamento",
+        "pk": 7,
+        "fields": {
+            "nombre": "Civil",
+            "departamento": 2
+        }
+    },
+    {
+        "model": "Areas.subdepartamento",
+        "pk": 8,
+        "fields": {
+            "nombre": "Mercantil",
+            "departamento": 2
+        }
+    }
+]

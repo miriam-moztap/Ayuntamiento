@@ -1,0 +1,526 @@
+[
+    {
+        "model": "documents.DocDep",
+        "pk": 1,
+        "fields": {
+            "name": "Circular",
+            "departamento": 2,
+            "subdepartamento": 1
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 2,
+        "fields": {
+            "name": "Solicitud de Información",
+            "departamento": 2,
+            "subdepartamento": 1
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 3,
+        "fields": {
+            "name": "Solicitud de Información Pública",
+            "departamento": 2,
+            "subdepartamento": 1
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 4,
+        "fields": {
+            "name": "Solicitud de Órgano Interno de Control",
+            "departamento": 2,
+            "subdepartamento": 1
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 5,
+        "fields": {
+            "name": "Daños a Terceros",
+            "departamento": 2,
+            "subdepartamento": 1
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 6,
+        "fields": {
+            "name": "Solicitudes de Pensión de Viudez y/o Orfandad",
+            "departamento": 2,
+            "subdepartamento": 1
+
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 7,
+        "fields": {
+            "name": "Solicitud de Pago de Retroactivo de Pensión de Viudez",
+            "departamento": 2,
+            "subdepartamento": 1
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 8,
+        "fields": {
+            "name": "Propuesta de Convenio",
+            "departamento": 2,
+            "subdepartamento": 1
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 9,
+        "fields": {
+            "name": "Desbloqueo de Clave Catastral",
+            "departamento": 2,
+            "subdepartamento": 1
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 10,
+        "fields": {
+            "name": "Admisión de Amparo",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 11,
+        "fields": {
+            "name": "Requerimiento",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 12,
+        "fields": {
+            "name": "Recurso de Revisión",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 13,
+        "fields": {
+            "name": "Recurso de Queja",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 14,
+        "fields": {
+            "name": "Conslusión",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 15,
+        "fields": {
+            "name": "Diferemiento de Audiencia",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 16,
+        "fields": {
+            "name": "Prorroga",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 17,
+        "fields": {
+            "name": "Ejecutoria",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 18,
+        "fields": {
+            "name": "Recurso de Inconformidad",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 19,
+        "fields": {
+            "name": "Suspensión Definitiva",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 20,
+        "fields": {
+            "name": "Pensión Alimenticia",
+            "departamento": 2,
+            "subdepartamento": 2
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 21,
+        "fields": {
+            "name": "Solicitud de Indemnización de Afectación a Predio",
+            "departamento": 2,
+            "subdepartamento": 7
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 22,
+        "fields": {
+            "name": "Derecho de Preferencia",
+            "departamento": 2,
+            "subdepartamento": 7
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 23,
+        "fields": {
+            "name": "Admisión a Demanda Civil",
+            "departamento": 2,
+            "subdepartamento": 7
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 24,
+        "fields": {
+            "name": "Sentencia",
+            "departamento": 2,
+            "subdepartamento": 7
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 25,
+        "fields": {
+            "name": "Solicitud de Publicación de Edictos",
+            "departamento": 2,
+            "subdepartamento": 7
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 26,
+        "fields": {
+            "name": "Solicitud de Domicilio",
+            "departamento": 2,
+            "subdepartamento": 7
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 27,
+        "fields": {
+            "name": "Solicitud de Informe de Salario",
+            "departamento": 2,
+            "subdepartamento": 7
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 28,
+        "fields": {
+            "name": "Amparo",
+            "departamento": 2,
+            "subdepartamento": 7
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 29,
+        "fields": {
+            "name": "Solicitud de Cancelación de Gravamen en Registro Público de la Propiedad",
+            "departamento": 2,
+            "subdepartamento": 7
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 30,
+        "fields": {
+            "name": "Solicitud de Dictamen de Jubilación",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 31,
+        "fields": {
+            "name": "Admisión de Amparo",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 32,
+        "fields": {
+            "name": "Propuesta de Convenio",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 33,
+        "fields": {
+            "name": "Dictamen de Baja de Trabajador",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 34,
+        "fields": {
+            "name": "Solicitud de Finiquito",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 35,
+        "fields": {
+            "name": "Solicitud por Bono de Antiguedad",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 36,
+        "fields": {
+            "name": "Solicitud de Asesoría",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 37,
+        "fields": {
+            "name": "Solicitud de Reconocimiento de Antiguedad",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 38,
+        "fields": {
+            "name": "Solicitud de Recisión Laboral",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 39,
+        "fields": {
+            "name": "Validación de Firma de Seguro de Vida",
+            "departamento": 2,
+            "subdepartamento": 5
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 40,
+        "fields": {
+            "name": "Solicitud de Liberación de Vehículo",
+            "departamento": 2,
+            "subdepartamento": 6
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 41,
+        "fields": {
+            "name": "Admisión de Demanda",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 42,
+        "fields": {
+            "name": "Acuerdo",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 43,
+        "fields": {
+            "name": "Suspensión",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 44,
+        "fields": {
+            "name": "Admisión de Recurso de Revisión",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 45,
+        "fields": {
+            "name": "Apertura de Incidente",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 46,
+        "fields": {
+            "name": "Resolución de Incidente",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 47,
+        "fields": {
+            "name": "Resolución de Recurso",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 48,
+        "fields": {
+            "name": "Sentencia",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 49,
+        "fields": {
+            "name": "Acuerdo de Conclusión y Archivo Definitivo",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 50,
+        "fields": {
+            "name": "Requerimiento de Cumplimiento de Sentencia",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 51,
+        "fields": {
+            "name": "Incidente de Destitución",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 52,
+        "fields": {
+            "name": "Destitución",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 53,
+        "fields": {
+            "name": "Requerimiento y Multa",
+            "departamento": 2,
+            "subdepartamento": 3
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 54,
+        "fields": {
+            "name": "Contrato de Prestación de Servicios",
+            "departamento": 2,
+            "subdepartamento": 8
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 55,
+        "fields": {
+            "name": "Solicitud de Pago de lo Indebido",
+            "departamento": 2,
+            "subdepartamento": 8
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 56,
+        "fields": {
+            "name": "Cedula de Liquidación IMSS",
+            "departamento": 2,
+            "subdepartamento": 8
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 57,
+        "fields": {
+            "name": "Cedula de Liquidación INFONAVIT",
+            "departamento": 2,
+            "subdepartamento": 8
+        }
+    },
+    {
+        "model": "documents.DocDep",
+        "pk": 58,
+        "fields": {
+            "name": "Multa SATES",
+            "departamento": 2,
+            "subdepartamento": 8
+        }
+    }
+    
+]
