@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'Apps.expedientes',
     'Apps.documents',
     'Apps.users',
-    'Apps.Areas'
+    'Apps.Areas',
+    'Apps.general',
 
 ]
 
