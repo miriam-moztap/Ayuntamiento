@@ -16,11 +16,12 @@ class CreateListUser(APIView):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response("message: Usuario creado", status=status.HTTP_200_OK) ##user.data, usar este código para el envío del token al email del usuario
+        return Response("message: Usuario creado", status=status.HTTP_200_OK) ##user.data, usar este código para el envío del token al email del usuario
 
 class ListUpdateDeleteUser(APIView):
 
-    def get(self, request, id):
-        user = User.objects.all()
-        serializer = UserSerializer(serializer.data)
+    def get(self, request):
+        usuario = User.objects.all()
+        serializer = UserSerializer(usuario, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
