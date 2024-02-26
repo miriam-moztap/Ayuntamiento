@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: ayuntamiento
+    env: docker
+    autoDeploy: false
+    plan: free
+    region: oregon
+    envVars:
+      - key: ENV
+        sync: False
+      #      - key: DJANGO_SECRET_KEY
+      #        sync: False
+      - key: DJANGO_ALLOWED_HOSTS
+        sync: False
+      - key: CORS_ALLOW_ALL_ORIGINS
+        sync: False
+      - key: CORS_ALLOWED_ORIGINS
+        sync: False
+      - key: CSRF_TRUSTED_ORIGINS
+        sync: False
+      - key: CSRF_COOKIE_SECURE
+        sync: False
+      - key: DEBUG
+        sync: False
+      - key: DB_BACKEND
+        sync: False
+      - key: DB_USERNAME
+        sync: False
+      - key: DB_PASSWORD
+        sync: False
+      - key: DB_NAME
+        sync: False
+      - key: DB_POR
+        sync: False
+      - key: DB_HOST
+        sync: false
+      - key: APP_NAME
+        sync: false
+      - key: URL_ACTIVATE
+        sync: false
