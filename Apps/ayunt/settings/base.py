@@ -172,22 +172,22 @@ CORS_ALLOWED_WHITELIST = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL='users.User'
+# AUTH_USER_MODEL='users.Usuario'
 
-REST_FRAMEWORK = {   
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework_simplejwt.authentication',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+# REST_FRAMEWORK = {   
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework_simplejwt.authentication',
+#     ),
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
         
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-}
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ),
+# }
 
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),
-    'SLIDING_TOKEN_REFRESH_LIFETIME': datetime.timedelta(days=1),
-    'SLIDING_TOKEN_LIFETIME': datetime.timedelta(days=30),
-}
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),
+#     'SLIDING_TOKEN_REFRESH_LIFETIME': datetime.timedelta(days=1),
+#     'SLIDING_TOKEN_LIFETIME': datetime.timedelta(days=30),
+# }

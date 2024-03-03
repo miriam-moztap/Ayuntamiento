@@ -5,7 +5,8 @@ from rest_framework.response import Response
 from rest_framework import status
 import jwt
 from datetime import datetime, timedelta
-from Apps.users.models import User
+# from Apps.users.models import Usuario
+from django.contrib.auth.models import User
 
 class Login(APIView):
     permission_classes = (AllowAny,)
