@@ -2,8 +2,8 @@
 # from rest_framework.response import Response
 # from rest_framework import status
 # from rest_framework_simplejwt.tokens import RefreshToken
-# from rest_framework_simplejwt.authentication import JWTAuthentication
-# from rest_framework.permissions import AllowAny
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.permissions import AllowAny
 
 # from .models import Usuario
 # from .serializers import UserSerializer
@@ -50,18 +50,20 @@
 #         return JsonResponse({'message': 'Superusuario creado exitosamente.'})
 
 
-
+#from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.contrib.auth import authenticate
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import RegisterUserSerializer, LoginSerializer
-from .models import LoginRegister
+from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
+from .serializers import RegisterUserSerializer, LoginSerializer, UserSerializer
+from .models import LoginRegister, User
 
-# Create your views here.
 
-class RegisterUserView(APIView):
+
+#Este código lo modificaré para que sólo el super usuario pueda crear otros usuarios
+class CreateNewUserView(APIView):
     def post(self, request):
         serializer = RegisterUserSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -70,30 +72,92 @@ class RegisterUserView(APIView):
     
         
 
+from rest_framework_simplejwt.tokens import AccessToken
+
+class LoginAndRegisterUserView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        email = request.data.get('email')
+        password = request.data.get('password')
+
+        user = authenticate(request, email=email, password=password)
+
+        if user:
+            refresh = RefreshToken.for_user(user)
+            access_token = str(refresh.access_token)
+            return Response({
+                'refresh': str(refresh),
+                'access': access_token,
+            })
+        else:
+            return Response({'error': 'Credenciales inválidas'}, status=400)
+        # # Guardar el registro de inicio de sesión en la base de datos
+        # login_record = LoginRegister.objects.create(user=user)
+        
+        # # Devolver la respuesta con los datos del usuario autenticado
+        # return Response(response, status=status.HTTP_200_OK)
+
+
+
+
+# def post(self, request):
+    #     email = request.data.get('email')
+    #     password = request.data.get('password')
+        
+    #     if not email or not password:
+    #         return Response({'message': 'El email y la contraseña son requeridos'}, status=status.HTTP_400_BAD_REQUEST)
+
+    #     try:
+    #         user = User.objects.get(email=email)
+    #     except User.DoesNotExist:
+    #         return Response({'message': 'No hay usuario con el email proporcionado'}, status=status.HTTP_400_BAD_REQUEST)
+
+    #     if not user.check_password(password):
+    #         return Response({'message': 'La combinación de email y contraseña es incorrecta'}, status=status.HTTP_400_BAD_REQUEST)
+
+    #     if not user.is_active:
+    #         return Response({'message': 'La cuenta de usuario no está activa'}, status=status.HTTP_400_BAD_REQUEST)
+
+    #     access_token = AccessToken.for_user(user)
+    #     user_serializer = UserSerializer(user)
+        
+    #     response = {
+    #         'token': str(access_token),
+    #         'user': user_serializer.data
+    #     }
+        
+
+
 class LoginUserView(APIView):
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        validated_data = serializer.validated_data
-
-        username = validated_data['username']
-        password = validated_data['password']
-        email = validated_data['email']
-
-        user = authenticate(username=username, password=password, email=email)
+        # username = serializer.data['username']
+        email = serializer.data['email']
+        password =serializer.data['password']
         
-        if user is None:
-            return Response({'error': 'Credenciales no válidas'}, status=status.HTTP_400_BAD_REQUEST)
-        
-        # Guarda el registro de inicio de sesión en la base de datos
-        login_record = LoginRegister.objects.create(user=user)
-        
-        # Devuelve la respuesta con los datos del usuario autenticado
-        data = {
-            'id': user.id,
-            'username': user.username,
-            # Agrega otros campos según sea necesario
-        }
 
-        return Response(data, status=status.HTTP_200_OK)
+        user = authenticate( email = email, password = password)
+        
+        if user:
+            print(email)
+            print(password)
+            return Response(status=status.HTTP_200_OK)
+        else:
+            return Response('fallaste', status=status.HTTP_400_BAD_REQUEST)
+    '''{
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+            },'''
+       
+       
+       
+        # data = {
+        #     'id': user.id,
+        #     'username': user.username
+        
+        # }
 
+        # return Response(data, status=status.HTTP_200_OK)
