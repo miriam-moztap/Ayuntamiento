@@ -178,7 +178,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+     ),
      'DEFAULT_AUTHENTICATION_CLASSES': (
          
         'rest_framework.permissions.IsAuthenticated',
@@ -187,7 +187,7 @@ REST_FRAMEWORK = {
 #         'rest_framework.authentication.BasicAuthentication',
 #         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
- }
+  }
 # SIMPLE_JWT = {
 #     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),
 #     'SLIDING_TOKEN_REFRESH_LIFETIME': datetime.timedelta(days=1),

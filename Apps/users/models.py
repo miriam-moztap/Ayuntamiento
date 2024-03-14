@@ -30,7 +30,7 @@ class Role(models.Model):
         ordering = ('id', )
 
 
-class UserManager(BaseUserManager):
+class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos que se cree el usuario y el superusuario.
 
     def create_user(self, name, last_name, email, password=None):
         if not email:
