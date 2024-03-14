@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser
@@ -9,6 +10,9 @@ from .serializers import ExpedienteSerializer, ExpedienteListDocumentsSerializer
 # Create your views here.
 # falta modificar el crud para cuando esté listo el login, pues se tienen que dar permisos para expediente, documento y áreas.
 class ExpedienteAPIView(APIView): ##Una vez creado el login, se debe modificar para que solo cierto(s) roles puedan crear un expediente
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+    
     def post(self, request):
         if request.method == "POST":
             serializer = ExpedienteSerializer(data=request.data)
@@ -24,7 +28,9 @@ class ExpedienteAPIView(APIView): ##Una vez creado el login, se debe modificar p
 
 
 class SingleExpedienteAPIGetUpdateDeleteView(APIView): 
-    
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+       
     def get(self, request, id):
         expediente = Expediente.objects.filter(id=id).first()
         if expediente is None:

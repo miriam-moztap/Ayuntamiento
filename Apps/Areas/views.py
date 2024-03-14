@@ -1,3 +1,5 @@
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -7,6 +9,8 @@ from .models import Departamento
 from .serializers import DepartamentoListSubdepartamentosSerializer
 
 class DepartamentoListAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
     def post(self, request):
         print(request.data)
         serializer = DepartamentoSerializer(data=request.data)
@@ -21,6 +25,8 @@ class DepartamentoListAPIView(APIView):
         return Response(serializer.data)
     
 class DepartamentoDetail(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
     def get_object(self, pk):
         try:
             return Departamento.objects.get(pk=pk)
@@ -46,6 +52,8 @@ class DepartamentoDetail(APIView):
         return Response("message: departamento eliminado satifactoriamente", status=status.HTTP_204_NO_CONTENT)
     
 class DepartamentoListSubdepartamentosView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, *args, **kwargs):
         departamentos = Departamento.objects.all()
         serializer = DepartamentoListSubdepartamentosSerializer(departamentos, many=True)

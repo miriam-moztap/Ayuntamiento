@@ -32,6 +32,7 @@ class ExpiringJWTAuthentication(JWTAuthentication):
 
     def authenticate(self, request):
         user = None
+        token = None
         try:
             raw_token = self.get_raw_token(request)
             validated_token = self.get_validated_token(raw_token)
