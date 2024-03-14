@@ -30,6 +30,11 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
+CSRF_COOKIE_SECURE = config('CSRF_COOKIE_SECURE', default='False', cast=bool)
+
+
+CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='', cast=Csv())
+
 
 # Application definition
 
@@ -48,15 +53,17 @@ INSTALLED_APPS = [
     'Apps.expedientes',
     'Apps.documents',
     'Apps.users',
-    'Apps.Areas'
+    'Apps.Areas',
+    'Apps.general',
 
 ]
 
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -165,21 +172,24 @@ CORS_ALLOWED_WHITELIST = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL='users.User'
 
-REST_FRAMEWORK = {   
+REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework_simplejwt.authentication',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
         
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+     ),
+     'DEFAULT_AUTHENTICATION_CLASSES': (
+         
+        'rest_framework.permissions.IsAuthenticated',
+        
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-}
-
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),
-    'SLIDING_TOKEN_REFRESH_LIFETIME': datetime.timedelta(days=1),
-    'SLIDING_TOKEN_LIFETIME': datetime.timedelta(days=30),
-}
+  }
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=60),
+#     'SLIDING_TOKEN_REFRESH_LIFETIME': datetime.timedelta(days=1),
+#     'SLIDING_TOKEN_LIFETIME': datetime.timedelta(days=30),
+# }
