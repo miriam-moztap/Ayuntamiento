@@ -1,26 +1,40 @@
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.permissions import AllowAny
+from django.contrib.auth import authenticate
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from django.shortcuts import get_object_or_404
-from .models import User, Role
-from .serializers import RoleSerializer, UserSerializer, UserRoleSerializer
+from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
+from .serializers import RegisterUserSerializer, LoginSerializer, UserSerializer
+from .models import LoginRegister, User
 
 
-class CreateListUser(APIView):
+
+#Este código lo modificaré para que sólo el super usuario pueda crear otros usuarios
+class CreateNewUserView(APIView):
+    def post(self, request):
+        serializer = RegisterUserSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response({'msg':'usuario registrado'}, status=status.HTTP_201_CREATED)
+
+
+class LoginAndRegisterUserView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [AllowAny]
 
     def post(self, request):
-        data = request.data.copy()
-        role = data.get('role', None)
-        if role is None:
-            return Response({'message': 'El rol es requerido'}, status=status.HTTP_400_BAD_REQUEST)
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response("message: Usuario creado", status=status.HTTP_200_OK) ##user.data, usar este código para el envío del token al email del usuario
+        email = request.data.get('email')
+        password = request.data.get('password')
 
-class ListUpdateDeleteUser(APIView):
+        user = authenticate(request, email=email, password=password)
 
-    def get(self, request, id):
-        user = User.objects.all()
-        serializer = UserSerializer(serializer.data)
-    
+        if user:
+            refresh = RefreshToken.for_user(user) ##aquí tengo que hacer que el refresh se utilice solamente para cuando pierden su password
+            access_token = str(refresh.access_token)
+            return Response({
+                'access': access_token,
+            })
+        else:
+            return Response({'error': 'Credenciales inválidas'}, status=400)
+        
