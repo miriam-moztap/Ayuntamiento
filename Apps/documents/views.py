@@ -1,3 +1,5 @@
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
@@ -9,6 +11,8 @@ from .models import Document, Tipo_Documento
 
 # Post para almacenar un documento en tabla de documentos
 class DocumentAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
     parser_classes = (MultiPartParser, FormParser, JSONParser)
 
     def post(self, request):
@@ -23,13 +27,7 @@ class DocumentAPIView(APIView):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-    #def post(self, request):
-     #   if request.method == "POST":
-      #      serializer = DocumentSerializer(data=request.data)
-       #     if serializer.is_valid():
-        #        serializer.save()
-         #       return Response(serializer.data, status=status.HTTP_201_CREATED)
-        #return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
     def get(self, request):
         documents = Document.objects.all()
@@ -39,7 +37,8 @@ class DocumentAPIView(APIView):
 
 
 class SingleDocumentAPIView(APIView):
-
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request, id):
         document = Document.objects.filter(id=id).first()
         if document is None:
@@ -66,12 +65,18 @@ class SingleDocumentAPIView(APIView):
         return Response('documento eliminado Sastifactorimente', status=status.HTTP_200_OK)
     
 class TipoDocumentoListView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request):
         tipos_documentos = Tipo_Documento.objects.all()
         serializer = Tipo_DocumentoSerializer(tipos_documentos, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 class TipoDocumentoDetailView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, pk):
         try:
             tipo_documento = Tipo_Documento.objects.get(pk=pk)
