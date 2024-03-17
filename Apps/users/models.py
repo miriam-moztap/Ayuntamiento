@@ -32,13 +32,14 @@ class Role(models.Model):
 
 class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos que se cree el usuario y el superusuario.
 
-    def create_user(self, name, last_name, email, password=None):
+    def create_user(self, name, last_name, email, role_id, password=None):
         if not email:
             raise ValueError('El usuario debe tener un correo electrónico')
         
         user = self.model(
             name=name,
             last_name=last_name,
+            role_id=role_id,
             email=self.normalize_email(email),
             # is_active=True,
             # is_superuser=False,
@@ -51,7 +52,7 @@ class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos 
         user.save()
         return user
 
-    def create_superuser(self, name, email, last_name, password):
+    def create_superuser(self, name, email, last_name, role_id, password):
         if not email:
             raise ValueError('El superusuario debe tener un correo electrónico')
         
@@ -59,6 +60,7 @@ class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos 
             email,
             name,
             last_name,
+            role_id=role_id,
             password=password,
             
             # is_active=True,
@@ -67,7 +69,7 @@ class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos 
             
             # **extra_fields,
         )
-        user.user_administrador = True
+        user.user_administrador=True
         # user.is_staff = True
         user.save()
         return user
@@ -79,7 +81,6 @@ class User(AbstractBaseUser):
     name = models.CharField(max_length=150, null=True, verbose_name='name', default='')
     last_name = models.CharField(
         max_length=150, null=True, verbose_name='last name', default='')
-    
     phone = models.CharField(verbose_name='phone', null=True, max_length=20, default='')
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -102,7 +103,7 @@ class User(AbstractBaseUser):
     #     help_text='Permisos específicos para este usuario.'
     # )
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name', 'last_name']
+    REQUIRED_FIELDS = ['name', 'last_name', 'role_id']
 
     def __str__(self):
         return f'{self.id} - {self.name} ({self.email})'
