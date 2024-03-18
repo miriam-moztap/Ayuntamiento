@@ -4,8 +4,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-class CSRFMiddleware(APIView):
-    def dispatch(self, request, *args, **kwargs):
+class CSRFMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
         # Verificar si es una solicitud segura (POST, PUT, PATCH, DELETE)
         if request.method in ('POST', 'PUT', 'PATCH', 'DELETE'):
             # Verificar si la vista es CreateUserView (o cualquier otra vista que necesites proteger con CSRF)
@@ -16,4 +19,5 @@ class CSRFMiddleware(APIView):
                     # Devolver una respuesta de error si el token CSRF no coincide
                     return JsonResponse({'detail': 'CSRF Token no válido'}, status=status.HTTP_403_FORBIDDEN)
         # Si no hay problemas con el token CSRF, continuar con la vista normalmente
-        return super().dispatch(request, *args, **kwargs)
+        response = self.get_response(request)
+        return response
