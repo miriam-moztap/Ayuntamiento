@@ -52,7 +52,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['name', 'last_name', 'email', 'role_id', 'password']
+        fields = ['name', 'last_name', 'email', 'role', 'password']
 
 #_______________________________________________________________________________________________##
 class LoginSerializer(serializers.Serializer):

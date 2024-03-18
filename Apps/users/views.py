@@ -18,7 +18,7 @@ class CreateNewUserView(APIView):
 
     def post(self, request):
         #Verificar si el usuario autenticado es superusuario
-        if not request.user.role_id != 1:
+        if not request.user.role_id == 1:
             return Response({'error': 'No tienes permiso para crear usuarios'}, status=status.HTTP_403_FORBIDDEN)
 
         serializer = RegisterUserSerializer(data=request.data)
