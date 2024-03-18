@@ -75,7 +75,7 @@ class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos 
         return user
 
 
-class User(AbstractBaseUser):
+class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         unique=True, max_length=100, null=False, verbose_name='email', default='')
     name = models.CharField(max_length=150, null=True, verbose_name='name', default='')
@@ -86,7 +86,7 @@ class User(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     user_administrator = models.BooleanField(default = False)
     status_delete = models.BooleanField(default=False)
-    role = models.ForeignKey(Role, choices=roles, on_delete=models.CASCADE, null=True, default='')
+    role_id = models.ForeignKey(Role, choices=roles, on_delete=models.CASCADE, null=False, default='')
     hidden_fields = ArrayField(models.CharField(max_length=50), blank=True, default=list)
     objects = UserManager()
 
@@ -126,7 +126,7 @@ class User(AbstractBaseUser):
 
 #modelo para registrar cada vez que alguien se loguea
     
-class LoginRegister(models.Model):
+class LoginLogbook(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default='')
     login_time = models.DateTimeField(auto_now_add = True)
 
@@ -135,3 +135,8 @@ class LoginRegister(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.login_time}"
+    
+
+class ActivitiesRegister(models.Model):
+    cambio = models.CharField(max_length= 200)
+    

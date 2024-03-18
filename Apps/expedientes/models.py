@@ -36,7 +36,7 @@ class Expediente(models.Model):
         blank=False, verbose_name="Fecha de Cierre")
     monto = models.FloatField(blank=False, verbose_name="Monto")
     abogado = models.ForeignKey(
-         User, on_delete=models.CASCADE, verbose_name='Usuario_id', default = '')
+        User, on_delete=models.CASCADE, verbose_name='Usuario_id', default = '')
     area = models.ForeignKey(
         Departamento, on_delete=models.CASCADE, verbose_name='area_id')
     status = models.ForeignKey(

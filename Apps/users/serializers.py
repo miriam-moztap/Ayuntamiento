@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import LoginRegister,User
+from .models import LoginLogbook, User
 # from rest_framework import serializers
 # from django.contrib.auth.models import User
 # from .models import Role,  Usuario
@@ -33,21 +33,27 @@ class UserSerializer(serializers.ModelSerializer):
 
 #este código lo voy a dejar para que el superusuario lo use al crear a otros usuarios, y 
 #en caso de que el usuario se repita, mande el error necesaario.
+
+from rest_framework import serializers
+
 class RegisterUserSerializer(serializers.ModelSerializer):
     email = serializers.CharField(max_length=50)
-    username = serializers.CharField(max_length=50)
+    name = serializers.CharField(max_length=50)
+    last_name = serializers.CharField(max_length=50)
     password = serializers.CharField(max_length=50)
-
+    
     def create(self, validated_data):
-        try:
-            user = User.objects.create_user(**validated_data)
-            
-        except:
-            raise serializers.ValidationError({"error":"Este nombre de usuario ya existe"})
+        name = validated_data['name']
+        if User.objects.filter(name=name).exists():
+            raise serializers.ValidationError({"error": "Este nombre de usuario ya existe"})
+        
+        user = User.objects.create_user(**validated_data)
         return user
+
     class Meta:
         model = User
-        fields = ['username', 'email', 'role', 'password']
+        fields = ['name', 'last_name', 'email', 'role_id', 'password']
+
 #_______________________________________________________________________________________________##
 class LoginSerializer(serializers.Serializer):
     email = serializers.CharField(max_length=50)
@@ -55,3 +61,8 @@ class LoginSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=50)
     # token = serializers.CharField(max_length=5000)
 
+
+class LoginLogbookSerializer(serializers.Serializer):
+    class Meta:
+        model = LoginLogbook
+        fields = '__all__'
