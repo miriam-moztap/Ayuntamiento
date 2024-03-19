@@ -9,4 +9,4 @@ python manage.py collectstatic --clear --noinput
 python manage.py migrate
 
 #Iniciar Gunicorn
-exec gunicorn Apps.ayunt.wsgi:application --bind 0.0.0.0.0:8000
+exec "$@"
