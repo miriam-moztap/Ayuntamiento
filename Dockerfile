@@ -13,7 +13,7 @@ ENV PYTHONUNBUFFERED=1
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
 
-WORKDIR /app
+WORKDIR /app/Apps/ayunt
 COPY . /app
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
@@ -23,4 +23,4 @@ USER appuser
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
 # File wsgi.py was not found. Please enter the Python path to wsgi file.
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "Apps.ayunt.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "Apps.ayunt.wsgi:application"]
