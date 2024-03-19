@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /app/Apps
+cd /app/Apps/ayunt
 
 pip install -r requirements.txt 
 
