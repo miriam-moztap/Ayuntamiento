@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /app
+cd /app/Apps
 
 pip install -r requirements.txt 
 
