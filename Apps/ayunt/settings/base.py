@@ -88,7 +88,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Apps.ayunt.wsgi.application'
+WSGI_APPLICATION = 'Apps.ayunt.wsgi'
 
 
 # Database
