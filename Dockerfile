@@ -27,4 +27,4 @@ USER appuser
 # File wsgi.py was not found. Please enter the Python path to wsgi file.
 #CMD ["gunicorn", "--bind", "0.0.0.0:8000", "Apps.ayunt.wsgi:application"]
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
-CMD ["gunicorn", "Apps.ayunt.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "Apps.ayunt.wsgi"]
