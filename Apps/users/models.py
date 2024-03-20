@@ -10,7 +10,6 @@ from django.conf import settings
 from Apps.users.choices import roles
 
 # Utils
-# from Apps.users.utils import send_email_validation
 
 class Role(models.Model):
     name = models.CharField(max_length=100, null=False, verbose_name='Name', default='')
@@ -32,27 +31,23 @@ class Role(models.Model):
 
 class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos que se cree el usuario y el superusuario.
 
-    def create_user(self, name, last_name, email, role_id, password=None):
+    def create_user(self, name, last_name, email, role, password=None):
         if not email:
             raise ValueError('El usuario debe tener un correo electrónico')
         
         user = self.model(
             name=name,
             last_name=last_name,
-            role_id=role_id,
+            role= Role.objects.get(id=1),
             email=self.normalize_email(email),
-            # is_active=True,
-            # is_superuser=False,
-            # is_staff=False,
-            # status_delete=False,
-            # **extra_fields,
+            
         )
-        # if password:
+    
         user.set_password(password)
         user.save()
         return user
 
-    def create_superuser(self, name, email, last_name, role_id, password):
+    def create_superuser(self, name, email, last_name, role, password):
         if not email:
             raise ValueError('El superusuario debe tener un correo electrónico')
         
@@ -60,17 +55,12 @@ class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos 
             email,
             name,
             last_name,
-            role_id=role_id,
+            role = Role.objects.get(id=1),
             password=password,
             
-            # is_active=True,
-            # is_superuser=True,
-            # is_staff=True,
-            
-            # **extra_fields,
+        
         )
         user.user_administrador=True
-        # user.is_staff = True
         user.save()
         return user
 
@@ -84,26 +74,15 @@ class User(AbstractBaseUser):
     phone = models.CharField(verbose_name='phone', null=True, max_length=20, default='')
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    is_superuser=models.BooleanField(default=False)
     user_administrator = models.BooleanField(default = False)
     status_delete = models.BooleanField(default=False)
-    role = models.ForeignKey(Role, choices=roles, on_delete=models.CASCADE, null=True, default='')
+    role = models.ForeignKey(Role, choices=roles, on_delete=models.CASCADE, null=False, default='')
     hidden_fields = ArrayField(models.CharField(max_length=50), blank=True, default=list)
     objects = UserManager()
 
-    # groups = models.ManyToManyField('auth.Group',
-    #     verbose_name='groups',
-    #     related_name='usuarios_related',
-    #     blank=True,
-    #     help_text='Los grupos a los que pertenece este usuario.'
-    # )
-    # user_permissions = models.ManyToManyField('auth.Permission',
-    #     verbose_name='user permissions',
-    #     related_name='usuarios_related',
-    #     blank=True,
-    #     help_text='Permisos específicos para este usuario.'
-    # )
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name', 'last_name', 'role_id']
+    REQUIRED_FIELDS = ['name', 'last_name', 'role']
 
     def __str__(self):
         return f'{self.id} - {self.name} ({self.email})'
@@ -117,16 +96,10 @@ class User(AbstractBaseUser):
     @property
     def is_staff(self):
         return self.user_administrador
-    # class Meta:
-    #     verbose_name = 'User'
-    #     verbose_name_plural = 'Users'
-    #     db_table = 'user'
-    #     ordering = ('id',)
-
-
+    
 #modelo para registrar cada vez que alguien se loguea
     
-class LoginRegister(models.Model):
+class LoginLogbook(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default='')
     login_time = models.DateTimeField(auto_now_add = True)
 
@@ -135,3 +108,8 @@ class LoginRegister(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.login_time}"
+    
+
+class ActivitiesRegister(models.Model):
+    cambio = models.CharField(max_length= 200)
+    
