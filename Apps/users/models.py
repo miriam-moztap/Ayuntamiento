@@ -38,7 +38,7 @@ class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos 
         user = self.model(
             name=name,
             last_name=last_name,
-            role= Role.objects.get(id=1),
+            role= Role.objects.get(id=id),
             email=self.normalize_email(email),
             
         )
