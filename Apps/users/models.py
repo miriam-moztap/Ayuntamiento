@@ -31,14 +31,14 @@ class Role(models.Model):
 
 class UserManager(BaseUserManager): ##esta clase es la forma en la que queremos que se cree el usuario y el superusuario.
 
-    def create_user(self, name, last_name, email, role, password=None):
+    def create_user(self, name, last_name, email, role=None, password=None):
         if not email:
             raise ValueError('El usuario debe tener un correo electrónico')
         
         user = self.model(
             name=name,
             last_name=last_name,
-            role= Role.objects.get(id=None),
+            role= Role.objects.get(role=role),
             email=self.normalize_email(email),
             
         )
